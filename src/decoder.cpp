@@ -165,6 +165,7 @@ void rtlSetup() {
     memcpy(&cfg->devices[101], &x10_sec, sizeof(r_device));
     memcpy(&cfg->devices[102], &cotech_36_7959, sizeof(r_device));
     memcpy(&cfg->devices[103], &honeywell, sizeof(r_device));
+    memcpy(&cfg->devices[104], &fineoffset_WH25, sizeof(r_device));
 
     // end of fragement
 

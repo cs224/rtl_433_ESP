@@ -2,6 +2,7 @@ compile_commands.json
 
 .pio
 .vscode
+.idea
 /rtl_433
 
 tools/copy.list
