@@ -201,6 +201,7 @@ void rtlSetup() {
     for (i = 0; i < cfg->num_r_devices; i++) {
       cfg->devices[i].protocol_num = i + 1;
       // These pulse demods have been tested (85), ymmv for the others
+      /*
       if (cfg->devices[i].modulation == OOK_PULSE_PPM ||
           cfg->devices[i].modulation == OOK_PULSE_PWM ||
           cfg->devices[i].modulation == OOK_PULSE_MANCHESTER_ZEROBIT) {
@@ -208,6 +209,7 @@ void rtlSetup() {
       } else {
         cfg->devices[i].disabled = 1;
       }
+       */
     }
 #ifdef DEMOD_DEBUG
     logprintfLn(LOG_INFO, "# of device(s) configured %d", cfg->num_r_devices);
@@ -239,8 +241,8 @@ void rtlSetup() {
     for (int i = 0; i < cfg->num_r_devices; i++) {
 // register all device protocols that are not disabled
 #ifdef MEMORY_DEBUG
-      logprintfLn(LOG_DEBUG, "Pre register_protocol %d %s, heap %d", i,
-                  cfg->devices[i].name, ESP.getFreeHeap());
+      logprintfLn(LOG_DEBUG, "Pre register_protocol %d %s, heap %d, disabled %d", i,
+                  cfg->devices[i].name, ESP.getFreeHeap(), cfg->devices[i].disabled);
 #endif
       if (cfg->devices[i].disabled <= 0) {
         register_protocol(cfg, &cfg->devices[i], NULL);

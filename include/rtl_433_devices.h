@@ -113,8 +113,8 @@
   DECL(x10_sec)                                                                \
   DECL(cotech_36_7959)                                                         \
   DECL(honeywell)                                                              \
-  /* Add new decoders here. */
   DECL(fineoffset_WH25)                                                        \
+  /* Add new decoders here. */
 #define NUMOFDEVICES 105
 /* Add new decoders here. */
 #else
